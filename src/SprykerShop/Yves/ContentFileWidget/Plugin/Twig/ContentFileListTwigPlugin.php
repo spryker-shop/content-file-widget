@@ -61,7 +61,7 @@ class ContentFileListTwigPlugin extends AbstractPlugin implements TwigPluginInte
     protected function createFilter(): TwigFilter
     {
         return new TwigFilter(static::FILTER_NAME, function ($fileSize): string {
-            $power = floor(log($fileSize, 1024));
+            $power = (int)floor(log($fileSize, 1024));
             $calculatedSize = number_format($fileSize / (1024 ** $power), static::NUMBER_OF_DECIMALS);
 
             return sprintf('%s %s', $calculatedSize, static::LABEL_SIZES[$power]);
