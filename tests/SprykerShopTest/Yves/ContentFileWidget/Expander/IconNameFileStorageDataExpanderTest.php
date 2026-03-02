@@ -48,9 +48,6 @@ class IconNameFileStorageDataExpanderTest extends Unit
         $this->assertSame($expectedFileIconName, $fileStorageDataTransfer->getIconName());
     }
 
-    /**
-     * @return array
-     */
     public function fileDataProvider(): array
     {
         return [
@@ -79,17 +76,11 @@ class IconNameFileStorageDataExpanderTest extends Unit
         ];
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\Expander\FileStorageDataExpanderInterface
-     */
     protected function createIconNameFileStorageDataExpander(): FileStorageDataExpanderInterface
     {
         return new IconNameFileStorageDataExpander($this->getConfig());
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\ContentFileWidgetConfig
-     */
     protected function getConfig(): ContentFileWidgetConfig
     {
         return new ContentFileWidgetConfig();

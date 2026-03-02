@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\ContentFileListTypeTransfer;
 
 interface ContentFileWidgetToContentFileClientInterface
 {
-    /**
-     * @param string $contentKey
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ContentFileListTypeTransfer|null
-     */
     public function executeFileListTypeByKey(string $contentKey, string $localeName): ?ContentFileListTypeTransfer;
 }

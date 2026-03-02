@@ -22,19 +22,11 @@ class IconNameFileStorageDataExpander implements FileStorageDataExpanderInterfac
      */
     protected $contentFileWidgetConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ContentFileWidget\ContentFileWidgetConfig $contentFileWidgetConfig
-     */
     public function __construct(ContentFileWidgetConfig $contentFileWidgetConfig)
     {
         $this->contentFileWidgetConfig = $contentFileWidgetConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileStorageDataTransfer $fileStorageDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileStorageDataTransfer
-     */
     public function expand(FileStorageDataTransfer $fileStorageDataTransfer): FileStorageDataTransfer
     {
         $fileStorageDataTransfer->requireType();
@@ -57,11 +49,6 @@ class IconNameFileStorageDataExpander implements FileStorageDataExpanderInterfac
         return $fileStorageDataTransfer->setIconName($fileIconName);
     }
 
-    /**
-     * @param string $fileName
-     *
-     * @return string
-     */
     protected function getFileIconNameByExtension(string $fileName): string
     {
         $iconNames = $this->contentFileWidgetConfig->getFileIconNames();

@@ -27,11 +27,6 @@ class ContentFileWidgetDependencyProvider extends AbstractBundleDependencyProvid
      */
     public const CLIENT_FILE_MANAGER_STORAGE = 'CLIENT_FILE_MANAGER_STORAGE';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -41,11 +36,6 @@ class ContentFileWidgetDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function addContentFileClient(Container $container): Container
     {
         $container->set(static::CLIENT_CONTENT_FILE, function (Container $container) {
@@ -55,11 +45,6 @@ class ContentFileWidgetDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function addFileManagerStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_FILE_MANAGER_STORAGE, function (Container $container) {

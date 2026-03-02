@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\FileStorageDataTransfer;
 
 interface FileStorageDataExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\FileStorageDataTransfer $fileStorageDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileStorageDataTransfer
-     */
     public function expand(FileStorageDataTransfer $fileStorageDataTransfer): FileStorageDataTransfer;
 }

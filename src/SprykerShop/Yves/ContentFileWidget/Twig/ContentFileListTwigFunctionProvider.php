@@ -71,12 +71,6 @@ class ContentFileListTwigFunctionProvider extends TwigFunctionProvider
      */
     protected $contentFileClient;
 
-    /**
-     * @param \Twig\Environment $twig
-     * @param string $localeName
-     * @param \SprykerShop\Yves\ContentFileWidget\Reader\ContentFileReaderInterface $contentFileReader
-     * @param \SprykerShop\Yves\ContentFileWidget\Dependency\Client\ContentFileWidgetToContentFileClientInterface $contentFileClient
-     */
     public function __construct(
         Environment $twig,
         string $localeName,
@@ -89,17 +83,11 @@ class ContentFileListTwigFunctionProvider extends TwigFunctionProvider
         $this->contentFileClient = $contentFileClient;
     }
 
-    /**
-     * @return string
-     */
     public function getFunctionName(): string
     {
         return static::FUNCTION_CONTENT_FILE_LIST;
     }
 
-    /**
-     * @return callable
-     */
     public function getFunction(): callable
     {
         return function (string $contentKey, string $templateIdentifier): string {
@@ -129,9 +117,6 @@ class ContentFileListTwigFunctionProvider extends TwigFunctionProvider
         };
     }
 
-    /**
-     * @return array
-     */
     protected function getAvailableTemplates(): array
     {
         return [
@@ -140,31 +125,16 @@ class ContentFileListTwigFunctionProvider extends TwigFunctionProvider
         ];
     }
 
-    /**
-     * @param string $contentKey
-     *
-     * @return string
-     */
     protected function getMessageContentFileListNotFound(string $contentKey): string
     {
         return sprintf(static::MESSAGE_CONTENT_FILE_LIST_NOT_FOUND, $contentKey);
     }
 
-    /**
-     * @param string $templateIdentifier
-     *
-     * @return string
-     */
     protected function getMessageContentFileListWrongTemplate(string $templateIdentifier): string
     {
         return sprintf(static::MESSAGE_NOT_SUPPORTED_TEMPLATE, $templateIdentifier);
     }
 
-    /**
-     * @param string $contentKey
-     *
-     * @return string
-     */
     protected function getMessageContentFileListWrongType(string $contentKey): string
     {
         return sprintf(static::MESSAGE_WRONG_CONTENT_FILE_LIST_TYPE, $contentKey);

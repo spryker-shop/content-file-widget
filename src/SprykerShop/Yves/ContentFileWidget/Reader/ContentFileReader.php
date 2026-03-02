@@ -58,11 +58,6 @@ class ContentFileReader implements ContentFileReaderInterface
         return $fileViewCollection;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileStorageDataTransfer $fileStorageDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileStorageDataTransfer
-     */
     protected function expandFileStorageDataTransfer(FileStorageDataTransfer $fileStorageDataTransfer): FileStorageDataTransfer
     {
         foreach ($this->fileStorageDataExpanders as $fileStorageDataExpander) {

@@ -55,9 +55,6 @@ class ContentFileListTwigPlugin extends AbstractPlugin implements TwigPluginInte
         return $twig;
     }
 
-    /**
-     * @return \Twig\TwigFilter
-     */
     protected function createFilter(): TwigFilter
     {
         return new TwigFilter(static::FILTER_NAME, function ($fileSize): string {

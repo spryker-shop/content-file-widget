@@ -24,12 +24,6 @@ use Twig\TwigFunction;
  */
 class ContentFileWidgetFactory extends AbstractFactory
 {
-    /**
-     * @param \Twig\Environment $twig
-     * @param string $localeName
-     *
-     * @return \Spryker\Shared\Twig\TwigFunctionProvider
-     */
     public function createContentFileListTwigFunctionProvider(Environment $twig, string $localeName): TwigFunctionProvider
     {
         return new ContentFileListTwigFunctionProvider(
@@ -40,12 +34,6 @@ class ContentFileWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @param \Twig\Environment $twig
-     * @param string $localeName
-     *
-     * @return \Twig\TwigFunction
-     */
     public function createContentFileListTwigFunction(Environment $twig, string $localeName): TwigFunction
     {
         $functionProvider = $this->createContentFileListTwigFunctionProvider($twig, $localeName);
@@ -57,9 +45,6 @@ class ContentFileWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\Reader\ContentFileReaderInterface
-     */
     public function createContentFileReader(): ContentFileReaderInterface
     {
         return new ContentFileReader(
@@ -78,25 +63,16 @@ class ContentFileWidgetFactory extends AbstractFactory
         ];
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\Expander\FileStorageDataExpanderInterface
-     */
     public function createIconNameFileStorageDataExpander(): FileStorageDataExpanderInterface
     {
         return new IconNameFileStorageDataExpander($this->getConfig());
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\Dependency\Client\ContentFileWidgetToContentFileClientInterface
-     */
     public function getContentFileClient(): ContentFileWidgetToContentFileClientInterface
     {
         return $this->getProvidedDependency(ContentFileWidgetDependencyProvider::CLIENT_CONTENT_FILE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ContentFileWidget\Dependency\Client\ContentFileWidgetToFileManagerStorageClientInterface
-     */
     public function getFileManagerStorageClient(): ContentFileWidgetToFileManagerStorageClientInterface
     {
         return $this->getProvidedDependency(ContentFileWidgetDependencyProvider::CLIENT_FILE_MANAGER_STORAGE);

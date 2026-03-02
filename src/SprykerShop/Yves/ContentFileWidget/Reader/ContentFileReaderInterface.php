@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\ContentFileListTypeTransfer;
 
 interface ContentFileReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ContentFileListTypeTransfer $contentFileListTypeTransfer
-     * @param string $localeName
-     *
-     * @return array
-     */
     public function getFileCollection(ContentFileListTypeTransfer $contentFileListTypeTransfer, string $localeName): array;
 }
