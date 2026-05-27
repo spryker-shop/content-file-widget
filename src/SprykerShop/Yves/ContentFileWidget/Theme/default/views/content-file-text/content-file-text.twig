@@ -10,7 +10,7 @@
             <li class="list__item spacing-bottom">
                 {% include molecule('file-download-link', 'FileManagerWidget') with {
                     data: {
-                        idFile: fileView.fkFile,
+                        idFile: fileView.uuid ?? fileView.fkFile,
                         fileName: fileView.fileName,
                     },
                 } only %}

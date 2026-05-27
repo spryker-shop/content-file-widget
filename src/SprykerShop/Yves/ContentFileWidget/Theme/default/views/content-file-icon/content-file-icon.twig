@@ -11,7 +11,7 @@
                 {% include molecule('file-download-link', 'FileManagerWidget') with {
                     modifiers: ['icon'],
                     data: {
-                        idFile: fileView.fkFile,
+                        idFile: fileView.uuid ?? fileView.fkFile,
                         fileName: fileView.fileName,
                         fileIcon: fileView.iconName,
                         fileSize: fileView.size | readable_bytesize
